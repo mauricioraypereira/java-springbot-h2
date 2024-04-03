@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import ray.mauricio.spring.entities.Category;
 import ray.mauricio.spring.entities.Order;
+import ray.mauricio.spring.entities.Product;
 import ray.mauricio.spring.entities.User;
 import ray.mauricio.spring.entities.enums.OrderStatus;
 import ray.mauricio.spring.repositories.CategoryRepository;
 import ray.mauricio.spring.repositories.OrderRepository;
+import ray.mauricio.spring.repositories.ProductRepository;
 import ray.mauricio.spring.repositories.UserRepository;
 
 @Configuration
@@ -29,6 +31,9 @@ public class TestConfig implements CommandLineRunner {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
+	@Autowired
+	private ProductRepository productRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -36,6 +41,12 @@ public class TestConfig implements CommandLineRunner {
 		Category c2 = new Category(null, "Livros");
 		Category c3 = new Category(null, "Computadores");
 		Category c4 = new Category(null, "Materiais de Contrução");
+		
+		Product p1 = new Product(null, "O Senhor dos Anéis", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
+		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
+		Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
+		Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
+		Product p5 = new Product(null, "X-Man 97", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
 		
 		User u1 = new User(null, "Mauricio Ray", "mauricioteste@gmail.com", "mauricioray", "12345");
 		User u2 = new User(null, "Noah Gaieski", "noahteste@gmail.com", "noahgaieski", "54321");
@@ -46,10 +57,9 @@ public class TestConfig implements CommandLineRunner {
 		Order o3 = new Order(null, Instant.parse("2019-04-03T15:21:22Z"), u3, OrderStatus.DELIVERED);
 		Order o4 = new Order(null, Instant.parse("2019-04-03T15:21:22Z"), u1, OrderStatus.CANCELED);
 		
-		
-		
 		userRepository.saveAll(Arrays.asList(u1, u2, u3));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3, o4));
 		categoryRepository.saveAll(Arrays.asList(c1, c2, c3, c4));
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 	}
 }
