@@ -1,9 +1,9 @@
-# Java Springbot H2
+# Java Springboot H2
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/mauricioraypereira/java-springbot-h2/blob/main/LICENSE) 
 
 # Sobre o projeto
 
-Java Springbot H2 é uma aplicação backend construída durante o curso de **Java COMPLETO Programação Orientada a Objetos + Projetos**, com o intuito de mostrar os conhecimento aprendidos.
+Java Springboot H2 é uma aplicação backend construída durante o curso de **Java COMPLETO Programação Orientada a Objetos + Projetos**, com o intuito de mostrar os conhecimento aprendidos.
 
 A aplicação consiste um CRUD completo de usuários aos quais podem solicitar pedidos de produtos
 
